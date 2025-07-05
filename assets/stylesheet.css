@@ -1,8 +1,8 @@
 @import url(styles-nf.css);
 
 :root {
-    --slide-width: 1280px; /*1280px*/
-    --slide-height: 720px; /*720px*/
+    --slide-width: min(100vw, 1280px); /*1280px*/
+    --slide-height: min(100vh, 720px); /*720px*/
     --base-unit-x: calc(var(--slide-width) / 10);
     --base-unit-y: calc(var(--slide-height) / 10);
     --base-unit: var(--base-unit-x);
