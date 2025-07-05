@@ -71130,5 +71130,13 @@
     const lang = localStorage.getItem('selectedLang') || 'da';
     applyLanguageFilter(lang);
   });
+
+  window.addEventListener('message', (event) => {
+    // Optionally validate event.origin if cross-origin
+    const layout = event.data.layout;
+    if (layout === 'side' || layout === 'bottom') {
+      document.body.setAttribute('data-layout', layout);
+    }
+  });
 </script>
 </html>

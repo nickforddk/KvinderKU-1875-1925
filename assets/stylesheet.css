@@ -736,12 +736,17 @@ html:has(body.iframe.bio) {
 }
 
 body.iframe.bio {
+    --default--spacing: var(--int-padding);
     display: flex;
     flex-flow: column;
     gap: 0px;
     overflow: hidden;
     /*margin-bottom: var(--base-unit-y);*/
     font-size: var(--font-size--small);
+
+    &[data-layout="bottom"] {
+        --default--spacing: var(--ext-border);
+    }
 
     section {
         border: 0px !important;
@@ -804,7 +809,7 @@ body.iframe.bio {
         }
 
         > section {
-            padding: var(--int-padding);
+            padding: var(--int-padding) var(--default--spacing);
             position: relative;
             margin: 0px;
             display: flex;
@@ -1403,24 +1408,26 @@ body.iframe.bio {
     }
 }
 
-@media only screen and (min-height: 100vw) {
+@media only screen and (min-height: 100vw) and (max-width: 1200px) {
     body.iframe.leaflet {
-        --ll-adj-margin: 20px;
+        --ll-adj-margin: var(--ext-border);
         --ll-adj-button: 30px;
         height: 100svh;
         width: 100vw;
-        display: block;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: var(--base-unit-y) auto auto;
         padding: 0px;
         margin: 0px;
         position: fixed;
 
         > section.map {
-            height: calc(40vh - var(--base-unit-y));
+            height: calc(40svh - var(--base-unit-y));
             padding: 0px;
             margin: 0px;
         }
         > section.text {
-            height: 60vh;
+            height: 60svh;
         }
         > header {
             grid-column: 1;
