@@ -1135,11 +1135,15 @@ body.iframe.bio {
                 justify-content: space-between;
                 align-items: center;
                 font-size: var(--font-size--small);
-                background: var(--background);
-                animation: textheader 1ms ease-in-out both;
-                animation-timeline: scroll();
-                animation-range: 0vh var(--base-unit-y);
+                background: var(--header-bgd);
                 z-index: 99999;
+
+                @supports ((animation-timeline: scroll()) and (animation-range: 0% 100%)) {
+                    background: var(--background);
+                    animation: textheader 1ms ease-in-out both;
+                    animation-timeline: scroll();
+                    animation-range: 0vh var(--base-unit-y);
+                }
                 
                 &:has(> div.timeline) {
                     align-items: center;
