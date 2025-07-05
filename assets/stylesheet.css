@@ -80,7 +80,7 @@ html, body {
 body.iframe.leaflet {
     --ll-adj-margin: var(--ext-border);
     --ll-adj-button: 40px;
-    height: 100vh;
+    height: 100svh;
     width: 100vw;
     position: fixed;
     display: grid;
@@ -244,7 +244,7 @@ body.iframe.leaflet {
         display: flex;
         justify-content: flex-start;
         align-items: stretch;
-        height: calc(100vh - var(--base-unit-y));
+        height: calc(100svh - var(--base-unit-y));
         
         > * {
             flex: 1;
@@ -264,7 +264,7 @@ body.iframe.leaflet {
         bottom: 0;
         left: 0;
         width: 100vw;
-        height: 100vh;
+        height: 100svh;
         background: var(--background);
         color: var(--foreground);
         font-family: var(--font-family--head);
@@ -369,7 +369,7 @@ body.iframe.leaflet {
         bottom: 0;
         left: 0;
         width: 100vw;
-        height: 100vh;
+        height: 100svh;
         background: var(--background);
         color: var(--foreground);
         font-family: var(--font-family--head);
@@ -565,7 +565,7 @@ div.leaflet {
             }
         }
     }
-    @media only screen and (max-width: 100vh) and (max-height: 900px) {
+    @media only screen and (max-width: 100svh) and (max-height: 900px) {
         .darklight {
             display: none;
         }
@@ -756,7 +756,7 @@ body.iframe.bio {
         color: var(--foreground);
         background: var(--background);
         width: 100%;
-        height: 100vh;
+        height: 100svh;
         box-sizing: border-box;
         overflow: auto;
         display: flex;
@@ -1407,7 +1407,7 @@ body.iframe.bio {
     body.iframe.leaflet {
         --ll-adj-margin: 20px;
         --ll-adj-button: 30px;
-        height: 100vh;
+        height: 100svh;
         width: 100vw;
         display: block;
         padding: 0px;
