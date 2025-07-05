@@ -1,0 +1,639 @@
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src:
+        url('fonts/InterVariable.woff2') format('woff2');
+    font-stretch: normal;
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 100 900;
+    font-display: swap;
+    src:
+        url('fonts/InterVariable-Italic.woff2') format('woff2');
+    font-stretch: normal;
+}
+:root {
+    scrollbar-width: thin;
+
+    --title-da: "150-året for kvinders adgang til Københavns Universitet";
+    --title-en: "150 years of women at the University of Copenhagen";
+    --logo-order: 1;
+
+    /* COLOURS */
+    --lch-l: calc(100% * (2/3));
+    --lch-c: calc(0.25);
+    --lch-h-vadj: 15;
+    
+    --blue: oklch(var(--lch-l) var(--lch-c) 252);
+    --cyan: oklch(from var(--blue) var(--lch-l) var(--lch-c) calc(h - 60));
+    --green: oklch(from var(--blue) var(--lch-l) var(--lch-c) calc(h - 120));
+    --orange: oklch(from var(--blue) var(--lch-l) var(--lch-c) calc(h - 180));
+    --red: oklch(from var(--blue) var(--lch-l) var(--lch-c) calc(h - 240));
+    --violet: oklch(from var(--blue) var(--lch-l) var(--lch-c) calc(h - 300));
+
+    --black: oklch(from #000000 l c h);
+    --white: oklch(from #FFFFFF l c h);
+    --grey: oklch(from var(--blue) calc(100% * (2/3)) calc(c / 6) h);
+    --alert: oklch(from var(--orange) calc(100% * (8/9)) c h);
+
+    --blue-l: oklch(from var(--blue) calc(100% * (8/9)) calc(c / 5) h);
+    --blue-g: oklch(from var(--blue) calc(100% * (5/6)) calc(c / 3) h);
+    --blue-v: oklch(from var(--blue) calc(100% * (5/6)) c calc(h - var(--lch-h-vadj)));    
+    --blue-half: oklch(from var(--blue) 50% c h);
+    --blue-pr: oklch(from var(--blue) calc(100% * (1/3)) calc(c * 2/3) h);
+    --blue-d: oklch(from var(--blue) calc(100% * (1/6)) calc(c * 1/2) h);
+
+    --cyan-l: oklch(from var(--cyan) calc(100% * (8/9)) calc(c / 5) h);
+    --cyan-g: oklch(from var(--cyan) calc(100% * (5/6)) calc(c / 3) h);
+    --cyan-v: oklch(from var(--cyan) calc(100% * (5/6)) c calc(h - var(--lch-h-vadj)));    
+    --cyan-half: oklch(from var(--cyan) 50% c h);
+    --cyan-pr: oklch(from var(--cyan) calc(100% * (1/3)) calc(c * 2/3) h);
+    --cyan-d: oklch(from var(--cyan) calc(100% * (1/6)) calc(c * 1/2) h);
+
+    --green-l: oklch(from var(--green) calc(100% * (8/9)) calc(c / 5) h);
+    --green-g: oklch(from var(--green) calc(100% * (5/6)) calc(c / 3) h);
+    --green-v: oklch(from var(--green) calc(100% * (5/6)) c calc(h - var(--lch-h-vadj)));    
+    --green-half: oklch(from var(--green) 50% c h);
+    --green-pr: oklch(from var(--green) calc(100% * (1/3)) calc(c * 2/3) h);
+    --green-d: oklch(from var(--green) calc(100% * (1/6)) calc(c * 1/2) h);
+
+    --orange-l: oklch(from var(--orange) calc(100% * (8/9)) calc(c / 5) h);
+    --orange-g: oklch(from var(--orange) calc(100% * (5/6)) calc(c / 3) h);
+    --orange-v: oklch(from var(--orange) calc(100% * (5/6)) c calc(h - var(--lch-h-vadj)));    
+    --orange-half: oklch(from var(--orange) 50% c h);
+    --orange-pr: oklch(from var(--orange) calc(100% * (1/3)) calc(c * 2/3) h);
+    --orange-d: oklch(from var(--orange) calc(100% * (1/6)) calc(c * 1/2) h);
+
+    --red-l: oklch(from var(--red) calc(100% * (8/9)) calc(c / 5) h);
+    --red-g: oklch(from var(--red) calc(100% * (5/6)) calc(c / 3) h);
+    --red-v: oklch(from var(--red) calc(100% * (5/6)) c calc(h - var(--lch-h-vadj)));    
+    --red-half: oklch(from var(--red) 50% c h);
+    --red-pr: oklch(from var(--red) calc(100% * (1/3)) calc(c * 2/3) h);
+    --red-d: oklch(from var(--red) calc(100% * (1/6)) calc(c * 1/2) h);
+
+    --violet-l: oklch(from var(--violet) calc(100% * (8/9)) calc(c / 5) h);
+    --violet-g: oklch(from var(--violet) calc(100% * (5/6)) calc(c / 3) h);
+    --violet-v: oklch(from var(--violet) calc(100% * (5/6)) c calc(h - var(--lch-h-vadj)));    
+    --violet-half: oklch(from var(--violet) 50% c h);
+    --violet-pr: oklch(from var(--violet) calc(100% * (1/3)) calc(c * 2/3) h);
+    --violet-d: oklch(from var(--violet) calc(100% * (1/6)) calc(c * 1/2) h);
+
+    --grey-l: oklch(from var(--grey) calc(100% * (8/9)) calc(c / 5) h);
+    --grey-g: oklch(from var(--grey) calc(100% * (5/6)) calc(c / 3) h);
+    --grey-v: oklch(from var(--grey) calc(100% * (5/6)) c calc(h - var(--lch-h-vadj)));    
+    --grey-half: oklch(from var(--grey) 50% c h);
+    --grey-pr: oklch(from var(--grey) calc(100% * (1/3)) calc(c * 2/3) h);
+    --grey-d: oklch(from var(--grey) calc(100% * (1/6)) calc(c * 1/2) h);
+
+    --offwhite: var(--grey-l);
+    --offblack: var(--grey-d);
+
+    --light: var(--grey-l);
+    --dark: var(--grey-d);
+
+    --black-50: oklch(from var(--black) l c h / 0.5);
+    --white-50: oklch(from var(--white) l c h / 0.5);
+    --black-25: oklch(from var(--black) l c h / 0.25);
+    --white-25: oklch(from var(--white) l c h / 0.25);
+    --black-faint: oklch(from var(--black) l c h / 0.2);
+    --white-faint: oklch(from var(--white) l c h / 0.2);
+    --black-00: oklch(from var(--black) l c h / 0);
+    --white-00: oklch(from var(--white) l c h / 0);
+
+    --default--foreground: var(--white);
+    --default--background: var(--grey-d);
+    --default--toned: var(--grey-pr);
+    --theme--foreground: var(--blue-d);
+    --theme--background: var(--white);
+    --theme--toned: var(--blue-pr);
+    --contrast--foreground: var(--blue-d);
+    --contrast--background: var(--cyan-l);
+    --contrast--toned: var(--white);
+
+    --foreground: var(--default--foreground);
+    --background: var(--default--background);
+
+
+    --switch: var(--cyan-l);
+    --marker--sm: light-dark(var(--blue-pr), var(--blue-g));
+    --marker--md: var(--blue);
+    --marker--lg: var(--cyan);
+    --marker--1: light-dark(var(--grey-pr), var(--grey-g));
+    --marker--text: var(--white);
+
+    --font-family--head: Inter, 'Helvetica Neue', Helvetica, sans-serif;
+    --font-settings--head: 'liga' 1, 'calt' 1, 'cpsp' 1, 'cv02' 1, 'cv11' 1, 'ss08' 1;
+    --font-variation--head: 'opsz' 24;
+    --font-letterspacing--head: -0.015em;
+    --font-weight--head--normal: 400;
+    --font-weight--head--bold: 700;
+    --font-weight--head--light: 500;
+
+    --font-family: Inter, 'Helvetica Neue', Helvetica, sans-serif;
+    --font-settings: 'liga' 1, 'calt' 1, 'cpsp' 1, 'cv02' 1, 'ss08' 1;
+    --font-variation: 'opsz' 16;
+    --font-letterspacing: normal;
+    --font-weight--normal: 400;
+    --font-weight--bold: 700;
+    --font-weight--light: 500;
+
+    --font-lineheight: 1.25;
+
+    --bullet: "\2022";
+    --bullet-map: "";
+    --bullet--position: center;
+    --bullet--color: var(--grey);
+    --bullet--font: var(--font-family);
+    --bullet--yrblank: "\2012\2012\2012\2012";
+    --bullet--yrblank-sp: 0em;
+
+    --base-unit: clamp(16px, 2vw, 1.25rem);
+    --base-unit-x: var(--base-unit);
+    --base-unit-y: var(--base-unit);
+    
+    --int-padding: calc(var(--base-unit) * 2);
+    --int-padding-x: var(--int-padding);
+    --int-padding-y: var(--int-padding);
+
+    --ext-border: var(--base-unit);
+
+    --border-weight: max(0.1em, 0.125rem);
+    --border-radius: 0.125rlh;
+
+    --slide-width: clamp(1000px, 120vw, 1280px) !important; /*1280px*/
+    --slide-height: clamp(720px, 100vw, 1000px)  !important; /*720px*/
+
+    --icon--exclaim: url('data:image/svg+xml,<svg viewBox="0 0 28.62 100" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="28.62" height="64.31" fill="black" /><circle cx="14.31" cy="85.69" r="14.31" fill="black" /></svg>');
+    --icon--info: url('data:image/svg+xml,<svg viewBox="0 0 28.62 100" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="35.69" width="28.62" height="64.31" fill="black" /><circle cx="14.31" cy="14.31" r="14.31" fill="black" /></svg>');
+    --icon--cross: url('data:image/svg+xml,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="35.69" width="100" height="28.62" fill="black" transform="rotate(45 50 50)" /><rect x="0" y="35.69" width="100" height="28.62" fill="black" transform="rotate(-45 50 50)" /></svg>');
+    --icon--home: url('data:image/svg+xml,<svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg"><defs><mask id="cutout"><rect x="0" y="0" width="100" height="50" fill = "white" /><circle cx="50" cy="25" r="6.75" fill="black" /><circle cx="50" cy="50" r="12.5" fill="black" /></mask></defs><path d="M 0 50 L 100 50 L 50 0 Z" fill="black" stroke="none" mask="url(%23cutout)" /></svg>');
+
+
+    --svg--circle: url('data:image/svg+xml,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50" fill="black" stroke="none" /></svg>');
+    --svg--bar: url('data:image/svg+xml,<svg viewBox="0 0 100 28.62" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="100" height="100" fill="black" /></svg>');
+    --svg--triangle-up: url('data:image/svg+xml,<svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg"><path d="M 0 50 L 100 50 L 50 0 Z" fill="black" stroke="none" /></svg>');
+    --svg--triangle-left: url('data:image/svg+xml,<svg viewBox="0 0 50 100" xmlns="http://www.w3.org/2000/svg"><path d="M 50 0 L 0 50 L 50 100 Z" fill="black" stroke="none" /></svg>');
+    --svg--triangle-down: url('data:image/svg+xml,<svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg"><path d="M 0 0 L 100 0 L 50 50 Z" fill="black" stroke="none" /></svg>');
+    --svg--triangle-right: url('data:image/svg+xml,<svg viewBox="0 0 50 100" xmlns="http://www.w3.org/2000/svg"><path d="M 0 0 L 50 50 L 0 100 Z" fill="black" stroke="none" /></svg>');
+}
+
+body {
+    font-optical-sizing: auto;
+    font-variation-settings: var(--font-variation);
+
+    > header {
+        box-shadow: 0px 0px var(--ext-border) var(--black-faint);
+    }
+}
+
+h1, h2, h3, h4, h5, h6, .title {
+    font-variation-settings: var(--font-variation--head);
+}
+
+section > header {
+    --header-shadow: var(--black-faint) !important;
+
+    > div.timeline {
+        mix-blend-mode: unset !important;
+
+        > a {
+            border-radius: 1em !important;
+            &:not(:hover) {
+                background: var(--coded) !important;
+                color: var(--white) !important;
+                border-color: var(--coded) !important;
+            }
+        }
+    }
+}
+section > header > :is(span, div.timeline) {
+    font-family: var(--font-family--head) !important;
+    font-feature-settings: var(--font-settings--head) !important;
+}
+section > header > span {
+    font-weight: var(--font-weight--head--light);
+}
+
+a.reset {
+    position: relative;
+    width: 1lh;
+    height: 1lh;
+    --close-text: "Close";
+    border-color: var(--scrollbar--color) !important;
+    background: var(--black-00) !important;
+    color: var(--white-00) !important;
+    font-size: var(--font-size--normal) !important;
+    border-radius: 2em !important;
+    overflow: clip;
+
+    &::before {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background: var(--scrollbar--color);
+        mask-image: var(--svg--circle), var(--icon--info);
+        mask-composite: exclude;
+        mask-position: 50% 14.31%, center;
+        mask-repeat: no-repeat;
+        mask-size: 0lh 0lh, auto 0.75lh;
+        transition: inherit;
+    }
+
+    &:hover {
+        background: var(--foreground) !important;
+        border-color: var(--foreground) !important;
+
+        &::before {
+            background: var(--coded, var(--grey));
+            mask-position: center, center;
+            mask-size: 150% 150%, auto 1lh;
+        }
+    }
+}
+
+:is(ul, ol).grads {
+    > li[class*="subj-"] {
+
+        &.subj-jurister {
+            --coded: var(--green-pr);
+            --coded-muted: var(--green-g);
+        }
+        &.subj-statsvidenskab {
+            --coded: var(--green);
+            --coded-muted: var(--green-g);
+        }
+        &.subj-magistreart {
+            --coded: var(--blue-pr);
+            --coded-muted: var(--blue-g);
+        }
+        &.subj-magistrescient {
+            --coded: var(--blue);
+            --coded-muted: var(--blue-g);
+        }
+        &.subj-teologer {
+            --coded: var(--violet-half);
+            --coded-muted: var(--violet-g);
+        }
+        &.subj-medicin {
+            --coded: var(--red-half);
+            --coded-muted: var(--red-g);
+        }
+
+        > a {
+            gap: 0.25lh !important;
+            width: fit-content !important;
+            
+            &::before, &::after {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0.25lh;
+                transition: inherit;
+            }
+
+            &::before {
+                background: var(--coded);
+                border-radius: var(--border-radius);
+                color: var(--white);
+                padding: 0.25lh 0.5lh;
+            }
+            &::after {
+                align-self: center;
+                border-radius: 2rem;
+                padding: 0.25lh;
+                min-width: 1lh;
+                height: 1lh;
+                text-align: center;
+                color: var(--coded-muted);
+                border: var(--border-weight) solid;
+            }
+
+            &:hover {
+                &::before {    
+                    background: var(--coded-muted);
+                    color: var(--background);
+                }
+                &::after {
+                    color: currentColor;
+                }
+            }
+        }
+    }
+}
+
+:is(ul, ol).study > li {
+    > :is(a, span) {
+        background: var(--background);
+        color: var(--foreground) !important;
+        --background: var(--coded-dark, var(--blue-d)) !important;
+        --foreground: var(--white) !important;
+        --bullet--color: var(--coded-muted, var(--grey)) !important;
+        border: 0px !important;
+    }
+
+    &:first-of-type > :is(a, span) {
+        --background: var(--coded) !important;
+        --bullet--color: var(--coded-muted) !important;
+    }
+}
+
+:is(ul, ol).background > li > :is(a, span),
+:is(ul, ol).career {
+    background: var(--background);
+    color: var(--foreground);
+    --background: var(--theme--background) !important;
+    --foreground: var(--theme--foreground) !important;
+    border: 0px !important;
+}
+
+div.lang {
+    /*&::after {
+        content: "";
+        mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z"></path><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0m.6-3h16.8M3.6 15h16.8"></path><path d="M11.5 3a17 17 0 0 0 0 18m1-18a17 17 0 0 1 0 18"></path></svg>');
+        mask-position: center;
+        mask-size: contain;
+        width: 1lh;
+        height: 1lh;
+        background: var(--foreground);
+        clip-path: circle();
+    }*/
+    > label {
+        border-bottom: unset !important;
+        font-weight: var(--font-weight--light) !important;
+        font-size: var(--font-size--tiny) !important;
+        opacity: 0.5;
+
+        &:hover {
+            border-bottom-width: unset !important;
+        }
+        &:has(input:checked) {
+            border-bottom: unset !important;
+            opacity: 1;
+        }
+    }
+
+    > label[title]::after {
+        content: attr(title) !important;
+    }
+}
+
+div.screensaver {
+    align-items: center !important;
+    justify-content: center !important;
+
+    > span {
+        width: calc(100vw - var(--base-unit-x)) !important;
+        align-items: center !important;
+        text-align: center;
+    }
+
+    > span::before {
+        border: 0px !important;
+        font-size: var(--font-size--tiny) !important;
+        padding: 0.25lh;
+        background: var(--cyan);
+        border-radius: var(--border-radius); 
+        letter-spacing: 0.1lh !important;
+    }
+}
+
+.leaflet-overlay-pane path.leaflet-interactive {
+    stroke: var(--marker--1) !important;
+    fill: var(--marker--1) !important;
+}
+
+
+@media only screen and (max-width: 400px) {
+    body.iframe.leaflet > header {
+        &::before {
+            content: "Kvinder 150 år";
+            text-transform: uppercase;
+        }
+        &:has(input#en:checked)::before {
+            content: "Women 150 years";
+        }
+    
+        > span[lang] {
+            display: none !important;
+        }
+    }
+}
+
+span.maiden {
+    font-size: var(--font-size--tiny);
+    color: var(--bullet--color);
+}
+
+section:is(.default) {
+    --background: var(--cyan-half) !important;
+    --foreground: var(--white) !important;
+    --header-bgd: var(--cyan) !important;
+    --bullet--color: var(--cyan) !important;
+    --header-shadow: var(--black-50) !important;
+
+    > section {     
+        > p:last-of-type {
+            display: flex;
+            flex-flow: row;
+            gap: 1rem; 
+
+            > a {
+                font-size: 0px;
+                color: var(--white-00);
+
+
+                &::before {
+                    content: "";
+                    display: flex;
+                    width: var(--base-unit-x);
+                    height: calc(0.5 * var(--base-unit-x));
+                    background: var(--foreground);
+                    mask-image: var(--logo);
+                    mask-position: left center;
+                    mask-size: contain;
+                    mask-repeat: no-repeat;
+                    transition: inherit;
+                }
+                &[href*="saxo"]::before {
+                    --logo: var(--kulogo_bw);
+                    width: calc(1.5 * var(--base-unit-x));
+                }
+
+                &:hover::before {
+                    background: var(--header-bgd);
+                }
+            }
+        }
+    }
+    > section[data-lang="en"] > p:last-of-type > a[href*="saxo"]::before {
+        mask-image: var(--kulogo_en_bw);
+    }
+}
+
+.subj-jurister, .degree.jurister {
+    --coded: var(--green-pr);
+    --coded-muted: var(--green-g);
+    --coded-light: var(--green-l);
+    --coded-dark: var(--green-d);
+    --coded-tone: var(--green);
+}
+.subj-statsvidenskab, .degree.statsvidenskab {
+    --coded: var(--green);
+    --coded-muted: var(--green-g);
+    --coded-light: var(--green-l);
+    --coded-dark: var(--green-d);
+    --coded-tone: var(--green);
+}
+.subj-magistreart, .degree.magistreart {
+    --coded: var(--blue-pr);
+    --coded-muted: var(--blue-g);
+    --coded-light: var(--blue-l);
+    --coded-dark: var(--blue-d);
+    --coded-tone: var(--blue);
+}
+.subj-magistrescient, .degree.magistrescient {
+    --coded: var(--blue);
+    --coded-muted: var(--blue-g);
+    --coded-light: var(--blue-l);
+    --coded-dark: var(--blue-d);
+    --coded-tone: var(--blue);
+}
+.subj-teologer, .degree.teologer {
+    --coded: var(--violet-half);
+    --coded-muted: var(--violet-g);
+    --coded-light: var(--violet-l);
+    --coded-dark: var(--violet-d);
+    --coded-tone: var(--violet);
+}
+.subj-medicin, .degree.medicin {
+    --coded: var(--red-half);
+    --coded-muted: var(--red-g);
+    --coded-light: var(--red-l);
+    --coded-dark: var(--red-d);
+    --coded-tone: var(--red);
+}
+
+section:is(.bio) {
+    --background: var(--coded-light, var(--cyan-l)) !important;
+    --foreground: var(--coded-dark, var(--blue-d)) !important;
+}
+section:is(.degree) {
+    --background: var(--coded-dark, var(--blue-d)) !important;
+    --foreground: var(--white) !important;
+    --header-bgd: var(--coded, var(--blue-pr)) !important;
+    --bullet--color: var(--coded-muted, var(--grey)) !important;
+
+    span.maiden {
+        --bullet--color: var(--grey) !important;
+    }
+}
+div.chart {
+    --header-bgd: var(--coded-tone, var(--grey-half)) !important;
+}
+
+:is(ul, ol):is(.background, .study) {
+    > li {
+        > :is(a) {
+            padding-right: 2lh !important;
+
+            &::after {
+                content: "";
+                display: flex;
+                position: absolute;
+                bottom: 0.5lh;
+                right: 0.5lh;
+                width: 1lh;
+                height: 1lh;
+                background: var(--bullet--color);
+                mask-image: var(--svg--triangle-right), var(--svg--triangle-right), var(--svg--circle);
+                mask-composite: exclude;
+                mask-size: 0.5lh 1lh, 0lh 0lh, 0.33lh 0.33lh;
+                mask-position: 100% 50%, -100% 50%, 0% 50%;
+                mask-repeat: no-repeat;
+                align-self: flex-end;
+                transition: inherit;
+            }
+            &:hover {
+                &::after {
+                    background: currentColor;
+                    scale: 1.25;
+                    mask-size: 0lh 0lh, 0.2lh 0.4lh, 0.75lh 0.75lh;
+                    mask-position: 100% 50%, 55% 50%, 50% 50%;
+                }
+            }
+        }
+    }
+}
+
+li[data-phd] {
+    &::after {
+        content: attr(data-phd);
+        font-size: var(--font-size--tiny);
+        font-weight: var(--font-weight--bold);
+        background: var(--foreground);
+        color: var(--background);
+        border-radius: var(--border-radius);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding-inline: 0.25lh;
+    }
+}
+
+body.bio.iframe {
+    scrollbar-gutter: stable;
+    
+    > section {
+        scrollbar-gutter: inherit;
+
+        header {
+            top: calc(var(--int-padding-y) - 0.5rem) !important;
+            margin: 0px calc(-1 * var(--ext-border)) !important;
+            padding: 0.5rem var(--ext-border) !important;
+            border-radius: var(--border-radius) !important;
+            border-bottom: 0px !important;
+        }
+    }
+}
+
+div.loading {
+    --background: var(--blue-d) !important;
+
+    &::before {
+        --foreground: var(--blue-pr);
+    }
+}
+
+p.note {
+    position: relative;
+    padding-left: calc(1lh + 0.5rem);
+    color: var(--bullet--color);
+
+    &::before {
+        content: "";
+        display: block;
+        background: currentColor;
+        clip-path: circle();
+        width: 1lh;
+        height: 1lh;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        mask-image: var(--svg--circle), url('data:image/svg+xml,<svg width="28.62px" height="100px" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="100" height="28.62" fill="black" /><rect x="0" y="0" width="28.62" height="64.31" fill="black" /><circle cx="14.31" cy="85.69" r="14.31" fill="black" /></svg>');
+        mask-composite: exclude;
+        mask-size: cover, auto 0.75lh;
+        mask-position: center;
+        mask-repeat: no-repeat;
+
+    }
+}
+
+div.leaflet.leaflet-container {
+    --background: light-dark(var(--grey-g), var(--grey-pr)) !important;
+}

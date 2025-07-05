@@ -1,0 +1,302 @@
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src:
+        url('ku-fonts/InterVariable.woff2') format('woff2');
+    font-stretch: normal;
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 100 900;
+    font-display: swap;
+    src:
+        url('ku-fonts/InterVariable-Italic.woff2') format('woff2');
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    font-style: normal;
+    font-weight: 400 600;
+    font-display: swap;
+    src:
+        url('ku-fonts/EBGaramond-VariableFont_wght.ttf') format('truetype');
+    font-stretch: normal;
+}
+@font-face {
+    font-family: 'EB Garamond';
+    font-style: italic;
+    font-weight: 400 600;
+    font-display: swap;
+    src:
+        url('ku-fonts/EBGaramond-Italic-VariableFont_wght.ttf') format('truetype');
+    font-stretch: normal;
+}
+
+/*@font-face {
+    font-family: 'EB Garamond';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: 
+        url('ku-fonts/eb-garamond-latin-400-normal.woff2') format('woff2'),
+        url('ku-fonts/eb-garamond-latin-400-normal.woff') format('woff');
+    unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+@font-face {
+    font-family: 'EB Garamond';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src:
+        url('ku-fonts/eb-garamond-latin-400-italic.woff2') format('woff2'),
+        url('ku-fonts/eb-garamond-latin-400-italic.woff') format('woff');
+    unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+@font-face {
+    font-family: 'EB Garamond';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: 
+        url('ku-fonts/eb-garamond-latin-500-normal.woff2') format('woff2'),
+        url('ku-fonts/eb-garamond-latin-500-normal.woff') format('woff');
+    unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+@font-face {
+    font-family: 'EB Garamond';
+    font-style: italic;
+    font-weight: 500;
+    font-display: swap;
+    src: 
+        url('ku-fonts/eb-garamond-latin-500-italic.woff2') format('woff2'),
+        url('ku-fonts/eb-garamond-latin-500-italic.woff') format('woff');
+    unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: 
+        url('ku-fonts/eb-garamond-latin-600-normal.woff2') format('woff2'),
+        url('ku-fonts/eb-garamond-latin-600-normal.woff') format('woff');
+    unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+@font-face {
+    font-family: 'EB Garamond';
+    font-style: italic;
+    font-weight: 600;
+    font-display: swap;
+    src:
+        url('ku-fonts/eb-garamond-latin-600-italic.woff2') format('woff2'), 
+        url('ku-fonts/eb-garamond-latin-600-italic.woff') format('woff');
+    unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}*/
+
+
+:root {
+    --title-da: "150-året for kvinders adgang til Københavns Universitet";
+    --title-en: "150 years of women at the University of Copenhagen";
+    --logo-order: -1;
+
+    --black: #000000;
+    --white: #FFFFFF;
+
+    --KU-primary: var(--KU-red-d);
+    --KU-secondary: var(--KU-grey-m);
+
+    --KU-red-d: #901A1E;
+    --KU-red-m: #c73028;
+    --KU-red-l: #dB3B0A;
+    --KU-blue-d: #122947;
+    --KU-blue-m: #425570;
+    --KU-blue-l: #bac7d9;
+    --KU-petrol-d: #0a5963;
+    --KU-petrol-m: #197f8e;
+    --KU-petrol-l: #b7d7de;
+    --KU-green-d: #39641c;
+    --KU-green-m: #4b8325;
+    --KU-green-l: #becaa8;
+    --KU-grey-d: #3d3d3d;
+    --KU-grey-m: #666666;
+    --KU-grey-l: #e1dfdf;
+    --KU-yellow: #ffbd38;
+    --KU-champagne: #fefaf2;
+
+    --light: var(--KU-grey-l);
+    --dark: var(--KU-grey-d);
+
+    --black-50: #00000080;
+    --white-50: #FFFFFF80;
+    --black-25: #00000040;
+    --white-25: #FFFFFF40;
+    --black-faint: #00000020;
+    --white-faint: #FFFFFF20;
+
+    --default--foreground: var(--white);
+    --default--background: var(--KU-blue-d);
+    --default--toned: var(--KU-blue-m);
+    --theme--foreground: var(--black);
+    --theme--background: var(--white);
+    --theme--toned: var(--KU-champagne);
+    --contrast--foreground: var(--black);
+    --contrast--background: var(--light);
+    --contrast--toned: var(--white);
+
+    --foreground: var(--default--foreground);
+    --background: var(--default--background);
+
+    --alert: var(--KU-yellow);
+    --switch: var(--KU-blue-l);
+    --marker--sm: light-dark(color-mix(in srgb, var(--KU-blue-d), var(--KU-petrol-l)), color-mix(in srgb, var(--KU-petrol-m), var(--KU-champagne)));
+    --marker--md: color-mix(in srgb, var(--KU-petrol-m), var(--KU-blue-m));
+    --marker--lg: var(--KU-red-l);
+    --marker--1: light-dark(color-mix(in srgb, var(--KU-blue-l), var(--KU-blue-m)), var(--KU-champagne));
+    --marker--text: var(--white);
+
+    --font-family--head: "EB Garamond", "Times New Roman", sans-serif;
+    --font-settings--head: 'lnum' 1;
+    --font-letterspacing--head: normal;
+    --font-weight--head--normal: 500;
+    --font-weight--head--bold: 500;
+    --font-weight--head--light: 400;
+
+    --font-family: "Inter", Helvetica, Arial, sans-serif;
+    --font-settings: 'liga' 1, 'calt' 1, 'case' 0;
+    --font-letterspacing: normal;
+    --font-weight--normal: 400;
+    --font-weight--bold: 600;
+    --font-weight--light: 300;
+
+    --font-lineheight: 1.25;
+
+    --bullet: "\2022";
+    --bullet-map: "";
+    --bullet--position: center;
+    --bullet--color: var(--KU-red-l);
+    --bullet--font: var(--font-family);
+    --bullet--yrblank: "\2012\2012\2012\2012";
+    --bullet--yrblank-sp: 0em;
+
+    --border-weight: 1px;
+    --border-radius: 2px;
+
+    --slide-width: clamp(1000px, 120vw, 1280px) !important; /*1280px*/
+    --slide-height: clamp(720px, 100vw, 1000px)  !important; /*720px*/
+}
+
+body {
+    font-optical-sizing: auto;
+
+    > header {
+        box-shadow: 0px 0px var(--ext-border) var(--black-faint);
+    }
+}
+
+section > header {
+    --header-shadow: var(--black-faint) !important;
+}
+section > header > :is(span, div.timeline) {
+    font-family: var(--font-family--head) !important;
+    font-feature-settings: var(--font-settings--head) !important;
+}
+section > header > span {
+    font-weight: var(--font-weight--head--bold);
+}
+
+a.reset {
+    width: 1lh;
+    --close-text: "\2717";
+    font-size: var(--font-size--normal) !important;
+    padding-bottom: calc(0.25lh + 0.5 * var(--border-weight)) !important;
+
+    &:hover {
+        color: var(--alert) !important;
+        background: var(--black) !important;
+        border-color: var(--black) !important;
+    }
+}
+
+:is(ul, ol).study > li,
+:is(ul, ol).career {
+    background: var(--contrast--toned);
+    border-color: color-mix(in srgb, var(--KU-grey-m), var(--KU-grey-l)) !important;
+}
+
+div.lang {
+    &::after {
+        content: "";
+        mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" viewBox="0 0 24 24"><path stroke="none" d="M0 0h24v24H0z"></path><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0m.6-3h16.8M3.6 15h16.8"></path><path d="M11.5 3a17 17 0 0 0 0 18m1-18a17 17 0 0 1 0 18"></path></svg>');
+        mask-position: center;
+        mask-size: contain;
+        width: 1lh;
+        height: 1lh;
+        background: var(--foreground);
+        clip-path: circle();
+    }
+    > label {
+        border-bottom: unset !important;
+        font-weight: var(--font-weight--bold) !important;
+        font-size: var(--font-size--tiny) !important;
+        opacity: 0.5;
+
+        &:hover {
+            border-bottom-width: unset !important;
+        }
+        &:has(input:checked) {
+            border-bottom: unset !important;
+            opacity: 1;
+        }
+    }
+
+    > label[title]::after {
+        content: attr(title) !important;
+    }
+}
+
+div.screensaver {
+    align-items: center !important;
+    justify-content: center !important;
+
+    > span {
+        width: calc(100vw - var(--base-unit-x)) !important;
+        align-items: center !important;
+        text-align: center;
+    }
+
+    > span::before {
+        border: 0px !important;
+        font-size: var(--font-size--tiny) !important;
+        padding: 0.25lh;
+        background: var(--KU-red-l);
+        border-radius: var(--border-radius); 
+        letter-spacing: 0.1lh !important;
+    }
+}
+
+.leaflet-overlay-pane path.leaflet-interactive {
+    stroke: var(--marker--1) !important;
+    fill: var(--marker--1) !important;
+}
+
+
+@media only screen and (max-width: 400px) {
+    body.iframe.leaflet > header {
+        &::before {
+            content: "Kvinder 150 år";
+            text-transform: uppercase;
+        }
+        &:has(input#en:checked)::before {
+            content: "Women 150 years";
+        }
+    
+        > span[lang] {
+            display: none !important;
+        }
+    }
+}
