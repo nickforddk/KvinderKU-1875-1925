@@ -118,9 +118,9 @@
     --background: var(--default--background);
 
 
-    --switch: var(--cyan-l);
+    --switch: var(--grey-g);
     --marker--sm: light-dark(var(--blue-pr), var(--blue-g));
-    --marker--md: var(--blue);
+    --marker--md: light-dark(var(--blue-half), var(--blue-v));
     --marker--lg: var(--cyan);
     --marker--1: light-dark(var(--grey-pr), var(--grey-g));
     --marker--text: var(--white);
@@ -636,4 +636,8 @@ p.note {
 
 div.leaflet.leaflet-container {
     --background: light-dark(var(--grey-g), var(--grey-pr)) !important;
+    
+    .marker-cluster > div > span {
+        font-variant-numeric: tabular-nums;
+    }
 }
