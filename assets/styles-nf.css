@@ -17,8 +17,6 @@
     font-stretch: normal;
 }
 :root {
-    scrollbar-width: thin;
-
     --title-da: "150-året for kvinders adgang til Københavns Universitet";
     --title-en: "150 years of women at the University of Copenhagen";
     --logo-order: 1;
@@ -164,9 +162,6 @@
     --border-weight: max(0.1em, 0.125rem);
     --border-radius: 0.125rlh;
 
-    --slide-width: clamp(1000px, 120vw, 1280px) !important; /*1280px*/
-    --slide-height: clamp(720px, 100vw, 1000px)  !important; /*720px*/
-
     --icon--exclaim: url('data:image/svg+xml,<svg viewBox="0 0 28.62 100" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="28.62" height="64.31" fill="black" /><circle cx="14.31" cy="85.69" r="14.31" fill="black" /></svg>');
     --icon--info: url('data:image/svg+xml,<svg viewBox="0 0 28.62 100" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="35.69" width="28.62" height="64.31" fill="black" /><circle cx="14.31" cy="14.31" r="14.31" fill="black" /></svg>');
     --icon--cross: url('data:image/svg+xml,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="35.69" width="100" height="28.62" fill="black" transform="rotate(45 50 50)" /><rect x="0" y="35.69" width="100" height="28.62" fill="black" transform="rotate(-45 50 50)" /></svg>');
@@ -188,6 +183,45 @@ body {
     > header {
         box-shadow: 0px 0px var(--ext-border) var(--black-faint);
     }
+
+    &.iframe.leaflet {
+        > header {
+            gap: 0.25lh;
+            > span[lang] + span:not([lang]) {
+                display: flex;
+                flex-flow: row;
+                gap: inherit;
+                color: var(--grey);
+                font-weight: var(--font-weight--light);
+                width: fit-content;
+                flex: unset !important;
+                margin-right: auto;
+
+                &::before {
+                    content: "" !important;
+                    display: inline-flex;
+                    width: 0.5lh;
+                    height: 1lh;
+                    background: var(--grey);
+                    mask-image: var(--svg--triangle-right);
+                    mask-repeat: no-repeat;
+                    mask-position: center;
+                    mask-size: 50%;
+
+                    @media only screen and (max-width: 600px) {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        @media only screen and (min-height: 100vw) and (max-width: 1200px) {
+            > section.text {
+                box-shadow: 0px 0px var(--ext-border) var(--black-faint);
+                z-index: 2;
+            }
+        }
+    }   
 }
 
 h1, h2, h3, h4, h5, h6, .title {
@@ -221,14 +255,16 @@ section > header > span {
 a.reset {
     position: relative;
     width: 1lh;
+    min-width: 1lh;
     height: 1lh;
     --close-text: "Close";
-    border-color: var(--scrollbar--color) !important;
+    border-color: var(--foreground) !important;
     background: var(--black-00) !important;
     color: var(--white-00) !important;
     font-size: var(--font-size--normal) !important;
     border-radius: 2em !important;
     overflow: clip;
+    opacity: 1 !important;
 
     &::before {
         position: absolute;
@@ -236,7 +272,7 @@ a.reset {
         left: 0px;
         width: 100%;
         height: 100%;
-        background: var(--scrollbar--color);
+        background: var(--foreground);
         mask-image: var(--svg--circle), var(--icon--info);
         mask-composite: exclude;
         mask-position: 50% 14.31%, center;
@@ -246,13 +282,13 @@ a.reset {
     }
 
     &:hover {
-        background: var(--foreground) !important;
-        border-color: var(--foreground) !important;
+        background: var(--coded-tone, var(--grey)) !important;
+        border-color: var(--coded-tone, var(--grey)) !important;
 
         &::before {
-            background: var(--coded, var(--grey));
+            background: var(--white) !important;
             mask-position: center, center;
-            mask-size: 150% 150%, auto 1lh;
+            mask-size: 150% 150%, auto 0.75lh;
         }
     }
 }
@@ -410,24 +446,15 @@ div.screensaver {
 }
 
 
-@media only screen and (max-width: 400px) {
-    body.iframe.leaflet > header {
-        &::before {
-            content: "De første 50 år";
-        }
-        &:has(input#en:checked)::before {
-            content: "The first 50 years";
-        }
-    
-        > span[lang] {
-            display: none !important;
-        }
-    }
-}
-
 span.maiden {
     font-size: var(--font-size--tiny);
     color: var(--bullet--color);
+}
+
+section {
+    --scrollbar--color: oklch(from var(--grey-g) l c h / 0.25) !important;
+    --scrollbar--thumb--color: var(--grey) !important;
+    --scrollbar--active--color: var(--white) !important;
 }
 
 section:is(.default) {
@@ -435,7 +462,9 @@ section:is(.default) {
     --foreground: var(--white) !important;
     --header-bgd: var(--cyan) !important;
     --bullet--color: var(--cyan) !important;
-    --header-shadow: var(--black-50) !important;
+    --scrollbar--color: var(--cyan) !important;
+    --scrollbar--thumb--color: var(--cyan-pr) !important;
+    --scrollbar--active--color: var(--white) !important;
 
     > section {     
         > p:last-of-type {
@@ -522,12 +551,18 @@ section:is(.default) {
 section:is(.bio) {
     --background: var(--coded-light, var(--cyan-l)) !important;
     --foreground: var(--coded-dark, var(--blue-d)) !important;
+    --scrollbar--color: oklch(from var(--coded, var(--blue)) l c h / 0.25) !important;
+    --scrollbar--thumb--color: var(--coded-dark, var(--blue-d)) !important;
+    --scrollbar--active--color: var(--coded-tone, var(--blue)) !important;
 }
 section:is(.degree) {
     --background: var(--coded-dark, var(--blue-d)) !important;
     --foreground: var(--white) !important;
     --header-bgd: var(--coded, var(--blue-pr)) !important;
-    --bullet--color: var(--coded-muted, var(--grey)) !important;
+    --bullet--color: var(--coded-tone, var(--grey)) !important;
+    --scrollbar--color: oklch(from var(--coded-muted, var(--grey-g)) l c h / 0.25) !important;
+    --scrollbar--thumb--color: var(--coded-tone, var(--grey)) !important;
+    --scrollbar--active--color: var(--white) !important;
 
     span.maiden {
         --bullet--color: var(--grey) !important;
