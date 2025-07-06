@@ -378,14 +378,16 @@ body.iframe.leaflet {
         align-items: center;
         justify-content: center;
         flex-flow: column;
-        transition: all 1s ease-in-out;
+        transition: all 1s ease;
         z-index: 9999;
         padding: var(--int-padding);
         clip-path: inset(0%);
+        translate: 0% 0%;
         transition-behavior: allow-discrete;
 
         &[data-state="loaded"] {
-            clip-path: inset(max(50vw, 50vh) round var(--base-unit));
+            clip-path: inset(100% 0% 0% 0%);
+            translate: 0% calc(-1 * var(--base-unit-y));
             display: none;
         }
 

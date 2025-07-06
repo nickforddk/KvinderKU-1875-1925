@@ -650,7 +650,12 @@ div.loading {
     --background: var(--blue-d) !important;
 
     &::before {
-        --foreground: var(--blue-pr);
+        --foreground: var(--blue-half);
+    }
+
+    &[data-state="loaded"] {
+        clip-path: inset(max(50vw, 50vh) round var(--base-unit)) !important;
+        translate: 0% 0% !important;
     }
 }
 
