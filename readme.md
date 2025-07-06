@@ -1,4 +1,4 @@
-# 150 år med kvinder på universitetet i Danmark
+# 150 år med kvinder på universiteterne i Danmark
 
 Dette repository er en del af et interaktivt udstillingsprojekt, der markerer 150 år med kvinder på universitetet i Danmark. Kvinder fik først lov til at læse på universitetet i 1875. Over de efterfølgende 50 år, var der 379 kvinder, som dimiterede fra Københavns Universitet. De blev biograferet i bogen *Kvindelige Akademikere 1875-1925* --- et værk, som 100 år senere, danner grundlaget for denne udstilling.
 
