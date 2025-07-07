@@ -270,7 +270,7 @@ a.reset {
         mask-image: var(--svg--triangle-up), var(--svg--bar), var(--svg--circle), var(--icon--cross);
         mask-composite: exclude;
         mask-size: 1lh 0.5lh, 0.67lh 0.5lh, 0lh 0lh, 0lh 0lh;
-        mask-position: 50% 25%, 50% 75%, 50% 100%, 50% 50%, 50% 100%;
+        mask-position: 50% 25%, 50% 75%, 50% 50%, 50% 100%;
         mask-repeat: no-repeat;
         transition: inherit;
     }
