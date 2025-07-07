@@ -2,7 +2,7 @@
 
 :root {
     --base: clamp(720px, 150vh, 1280px); /*1280px*/
-    --base-mobile: clamp(720px, 150vw, 1280px); /*720px*/
+    --base-mobile: clamp(720px, 160vw, 1280px); /*720px*/
     
     --base-unit: calc(var(--base) / 10);
     --base-unit-x: var(--base-unit);

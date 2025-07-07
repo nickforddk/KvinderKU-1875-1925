@@ -617,7 +617,7 @@ body.iframe.bio {
         header {
             top: var(--ext-border) !important;
             margin: 0px calc(-1 * var(--ext-border)) var(--ext-border) calc(-1 * var(--ext-border)) !important;
-            padding: 0.75rem var(--ext-border) !important;
+            padding: 1rem var(--ext-border) !important;
             border-radius: var(--border-radius) !important;
             border-bottom: 0px !important;
         }
