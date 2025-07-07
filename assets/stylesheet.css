@@ -1,12 +1,13 @@
 @import url(styles-nf.css);
 
 :root {
-    --slide-width: clamp(1000px, 120vw, 1280px); /*1280px*/
-    --slide-height: clamp(720px, 100vw, 1000px); /*720px*/
+    --base: clamp(720px, 150vh, 1280px); /*1280px*/
+    --base-mobile: clamp(720px, 150vw, 1280px); /*720px*/
     
-    --base-unit-x: calc(var(--slide-width) / 10);
-    --base-unit-y: calc(var(--slide-height) / 10);
-    --base-unit: var(--base-unit-x);
+    --base-unit: calc(var(--base) / 10);
+    --base-unit-x: var(--base-unit);
+    --base-unit-y: var(--base-unit);
+    
     --int-padding: calc(var(--base-unit) / 2);
     --int-padding-x: calc(var(--base-unit-x) / 2);
     --int-padding-y: calc(var(--base-unit-y) / 2);
@@ -80,7 +81,7 @@ html, body {
 
 body.iframe.leaflet {
     --ll-adj-margin: var(--ext-border);
-    --ll-adj-button: 40px;
+    --ll-adj-button: clamp(1.5rem, 3vw, 40px);
     height: 100svh;
     width: 100vw;
     position: fixed;
@@ -208,7 +209,6 @@ body.iframe.leaflet {
             > div.lang {
                 position: absolute;
                 right: var(--ext-border);
-                top: calc((var(--base-unit-y) - 1.5lh) / 2);
                 --background: var(--black);
                 --foreground: var(--white);
                 background: var(--background);
@@ -1165,6 +1165,7 @@ body.iframe.bio {
                     font-variant-numeric: tabular-nums;
                     position: relative;
                     width: 100%;
+                    height: 1lh;
                     display: flex;
                     gap: 0.5lh;
                     justify-content: space-between;
@@ -1175,13 +1176,14 @@ body.iframe.bio {
                 > div.timeline::before,
                 > div.timeline::after {
                     padding: calc(0.25lh + var(--border-weight)) 0px;
+                    margin: calc(-1 * (0.25lh + var(--border-weight))) 0px;
                 }
                 > div.timeline::before {
                     content: "1875";
                     display: var(--year-start--display);
                 }
                 > div.timeline::after {
-                    content: "2025";
+                    content: "1925";
                     display: var(--year-end--display);
                 }
                 > div.timeline > hr {
@@ -1193,12 +1195,14 @@ body.iframe.bio {
                 > div.timeline > :where(span, a) {
                     display: block;
                     position: absolute;
-                    left: calc(100% * (var(--year) - 1875) / 150);
+                    left: calc(4ch + 0.5lh + ((100% - 8ch - 0.5lh) * ((var(--year) - 1875) / 51)));
+                    translate: -50%;
                     /*translate: calc(-100% * (var(--year) - 1875) / 150);*/
                     border: var(--border-weight) solid;
                     border-radius: var(--border-radius);
                     background: var(--white);
                     padding: 0.25lh;
+                    margin: -0.25lh 0px;
                     line-height: 1;
                     font-weight: var(--font-weight--bold);
                     text-decoration: none;
@@ -1226,6 +1230,7 @@ body.iframe.bio {
                     background: var(--alert);
                     color: var(--black);
                     padding: 0.25lh;
+                    margin: -0.25lh 0px;
                     line-height: var(--font-size--small);
                     font-size: var(--font-size--fineprint);
                     font-weight: var(--font-weight--bold);
@@ -1395,42 +1400,33 @@ body.iframe.bio {
         --scrollbar--active--color: var(--white);
     }
  
-    /**::-webkit-scrollbar, .scroller::-webkit-scrollbar {
-        width: var(--scrollbar--width);
-        height: var(--scrollbar--width);
-        background: var(--scrollbar--color);
-    }
-    *::-webkit-scrollbar-corner, .scroller::-webkit-scrollbar-corner {
-        background: none;
-    }
-    *::-webkit-scrollbar-thumb, .scroller::-webkit-scrollbar-thumb {
-        background: var(--scrollbar--thumb--color);
-    }
-    *::-webkit-scrollbar-thumb:active, .scroller::-webkit-scrollbar-thumb:active {
-        background: var(--scrollbar--active--color);
-    }*/
+}
+
+:root:has(body[data-layout="bottom"]) {
+    --base: var(--base-mobile);
 }
 
 @media only screen and (min-height: 100vw) and (max-width: 1200px) {
+    :root {
+        --base: var(--base-mobile);
+    }
+
     body.iframe.leaflet {
         --ll-adj-margin: var(--ext-border);
-        --ll-adj-button: 30px;
         height: 100svh;
         width: 100vw;
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: var(--base-unit-y) auto auto;
+        grid-template-rows: auto 4fr 6fr;
         padding: 0px;
         margin: 0px;
         position: fixed;
 
         > section.map {
-            height: calc(40svh - var(--base-unit-y));
             padding: 0px;
             margin: 0px;
         }
         > section.text {
-            height: 60svh;
         }
         > header {
             grid-column: 1;

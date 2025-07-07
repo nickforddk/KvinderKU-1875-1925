@@ -149,18 +149,8 @@
     --bullet--yrblank: "\2012\2012\2012\2012";
     --bullet--yrblank-sp: 0em;
 
-    --base-unit: clamp(16px, 2vw, 1.25rem);
-    --base-unit-x: var(--base-unit);
-    --base-unit-y: var(--base-unit);
-    
-    --int-padding: calc(var(--base-unit) * 2);
-    --int-padding-x: var(--int-padding);
-    --int-padding-y: var(--int-padding);
-
-    --ext-border: var(--base-unit);
-
-    --border-weight: max(0.1em, 0.125rem);
-    --border-radius: 0.125rlh;
+    --border-weight: 0.125rem;
+    --border-radius: 0.125rem;
 
     --icon--exclaim: url('data:image/svg+xml,<svg viewBox="0 0 28.62 100" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="28.62" height="64.31" fill="black" /><circle cx="14.31" cy="85.69" r="14.31" fill="black" /></svg>');
     --icon--info: url('data:image/svg+xml,<svg viewBox="0 0 28.62 100" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="35.69" width="28.62" height="64.31" fill="black" /><circle cx="14.31" cy="14.31" r="14.31" fill="black" /></svg>');
@@ -230,12 +220,15 @@ h1, h2, h3, h4, h5, h6, .title {
 
 section > header {
     --header-shadow: var(--black-faint) !important;
+    overflow: clip;
 
     > div.timeline {
         mix-blend-mode: unset !important;
 
         > a {
+            border: 0px !important;
             border-radius: 1em !important;
+            padding: 0.25lh 0.5lh !important;
             &:not(:hover) {
                 background: var(--coded) !important;
                 color: var(--white) !important;
@@ -258,13 +251,13 @@ a.reset {
     min-width: 1lh;
     height: 1lh;
     --close-text: "Close";
-    border-color: var(--foreground) !important;
+    border: 0px !important;
     background: var(--black-00) !important;
     color: var(--white-00) !important;
     font-size: var(--font-size--normal) !important;
-    border-radius: 2em !important;
-    overflow: clip;
+    border-radius: 0px !important;
     opacity: 1 !important;
+    padding-inline: 0px !important;
 
     &::before {
         position: absolute;
@@ -273,22 +266,21 @@ a.reset {
         width: 100%;
         height: 100%;
         background: var(--foreground);
-        mask-image: var(--svg--circle), var(--icon--info);
+        opacity: 0.5;
+        mask-image: var(--svg--triangle-up), var(--svg--bar), var(--svg--circle), var(--icon--cross);
         mask-composite: exclude;
-        mask-position: 50% 14.31%, center;
+        mask-size: 1lh 0.5lh, 0.67lh 0.5lh, 0lh 0lh, 0lh 0lh;
+        mask-position: 50% 25%, 50% 75%, 50% 100%, 50% 50%, 50% 100%;
         mask-repeat: no-repeat;
-        mask-size: 0lh 0lh, auto 0.75lh;
         transition: inherit;
     }
 
     &:hover {
-        background: var(--coded-tone, var(--grey)) !important;
-        border-color: var(--coded-tone, var(--grey)) !important;
-
         &::before {
-            background: var(--white) !important;
-            mask-position: center, center;
-            mask-size: 150% 150%, auto 0.75lh;
+            scale: 1.25;
+            opacity: 1;
+            mask-size: 0lh 0lh, 0lh 0lh, 1lh 1lh, 0.7lh 0.7lh;
+            mask-position: 50% 0%, 50% 100%, 50% 50%, 50% 50%;
         }
     }
 }
@@ -438,11 +430,6 @@ div.screensaver {
         border-radius: var(--border-radius); 
         letter-spacing: 0.1lh !important;
     }
-}
-
-.leaflet-overlay-pane path.leaflet-interactive {
-    stroke: var(--marker--1) !important;
-    fill: var(--marker--1) !important;
 }
 
 
@@ -621,16 +608,16 @@ li[data-phd] {
     }
 }
 
-body.bio.iframe {
+body.iframe.bio {
     scrollbar-gutter: stable;
     
     > section {
         scrollbar-gutter: inherit;
 
         header {
-            top: calc(var(--int-padding-y) - 0.5rem) !important;
-            margin: 0px calc(-1 * var(--ext-border)) !important;
-            padding: 0.5rem var(--ext-border) !important;
+            top: var(--ext-border) !important;
+            margin: 0px calc(-1 * var(--ext-border)) var(--ext-border) calc(-1 * var(--ext-border)) !important;
+            padding: 0.75rem var(--ext-border) !important;
             border-radius: var(--border-radius) !important;
             border-bottom: 0px !important;
         }
@@ -641,6 +628,7 @@ body.bio.iframe {
             header {
                 top: 0px !important;
                 border-radius: 0px !important;
+                margin-bottom: 0px !important;
             }
         }
     }
@@ -688,5 +676,41 @@ div.leaflet.leaflet-container {
     
     .marker-cluster > div > span {
         font-variant-numeric: tabular-nums;
+    }
+}
+.leaflet-overlay-pane path.leaflet-interactive {
+    stroke: var(--marker--1) !important;
+    fill: var(--marker--1) !important;
+}
+
+
+div.leaflet-control-layers.leaflet-control {
+    label {
+        font-weight: var(--font-weight--light);
+        border: 0px !important;
+        border-radius: calc(var(--ll-adj-button) / 2) !important;
+        background: var(--cyan) !important;
+        color: var(--white) !important;
+        line-height: var(--ll-adj-button) !important;
+        padding: 0px 0.4lh !important;
+
+        &:hover,
+        &:active {
+            opacity: 1 !important;
+            background: var(--grey) !important;
+            color: var(--white) !important;
+        }
+
+        &:has(input:checked) {
+            background: var(--foreground) !important;
+            color: var(--background) !important;
+
+            &:hover,
+            &:active {
+                opacity: 1 !important;
+                background: var(--grey) !important;
+                color: var(--white) !important;
+            }
+        }
     }
 }
