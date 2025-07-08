@@ -22,8 +22,14 @@
     --logo-order: 1;
 
     /* COLOURS */
-    --lch-l: calc(100% * (2/3));
-    --lch-c: calc(0.25);
+    --lch-l: 0.6667; /*calc(100% * (2/3))*/
+    --lch-l-l: 0.8889; /*calc(100% * (8/9))*/
+    --lch-l-g: 0.8333; /*calc(100% * (5/6))*/
+    --lch-l-half: 0.5; /*50%*/
+    --lch-l-pr: 0.3333; /*calc(100% * (1/3))*/
+    --lch-l-d: 0.1667; /*calc(100% * (1/6))*/
+
+    --lch-c: 0.25;
     --lch-h-vadj: 15;
     
     --blue: oklch(var(--lch-l) var(--lch-c) 252);
@@ -35,57 +41,57 @@
 
     --black: oklch(from #000000 l c h);
     --white: oklch(from #FFFFFF l c h);
-    --grey: oklch(from var(--blue) calc(100% * (2/3)) calc(c / 6) h);
-    --alert: oklch(from var(--orange) calc(100% * (8/9)) c h);
+    --grey: oklch(from var(--blue) var(--lch-l) calc(c / 6) h);
+    --alert: oklch(from var(--orange) var(--lch-l-l) c h);
 
-    --blue-l: oklch(from var(--blue) calc(100% * (8/9)) calc(c / 5) h);
-    --blue-g: oklch(from var(--blue) calc(100% * (5/6)) calc(c / 3) h);
-    --blue-v: oklch(from var(--blue) calc(100% * (5/6)) c calc(h - var(--lch-h-vadj)));    
-    --blue-half: oklch(from var(--blue) 50% c h);
-    --blue-pr: oklch(from var(--blue) calc(100% * (1/3)) calc(c * 2/3) h);
-    --blue-d: oklch(from var(--blue) calc(100% * (1/6)) calc(c * 1/2) h);
+    --blue-l: oklch(from var(--blue) var(--lch-l-l) calc(c / 5) h);
+    --blue-g: oklch(from var(--blue) var(--lch-l-g) calc(c / 3) h);
+    --blue-v: oklch(from var(--blue) var(--lch-l-g) c calc(h - var(--lch-h-vadj)));    
+    --blue-half: oklch(from var(--blue) var(--lch-l-half) c h);
+    --blue-pr: oklch(from var(--blue) var(--lch-l-pr) calc(c * 2/3) h);
+    --blue-d: oklch(from var(--blue) var(--lch-l-d) calc(c * 1/2) h);
 
-    --cyan-l: oklch(from var(--cyan) calc(100% * (8/9)) calc(c / 5) h);
-    --cyan-g: oklch(from var(--cyan) calc(100% * (5/6)) calc(c / 3) h);
-    --cyan-v: oklch(from var(--cyan) calc(100% * (5/6)) c calc(h - var(--lch-h-vadj)));    
-    --cyan-half: oklch(from var(--cyan) 50% c h);
-    --cyan-pr: oklch(from var(--cyan) calc(100% * (1/3)) calc(c * 2/3) h);
-    --cyan-d: oklch(from var(--cyan) calc(100% * (1/6)) calc(c * 1/2) h);
+    --cyan-l: oklch(from var(--cyan) var(--lch-l-l) calc(c / 5) h);
+    --cyan-g: oklch(from var(--cyan) var(--lch-l-g) calc(c / 3) h);
+    --cyan-v: oklch(from var(--cyan) var(--lch-l-g) c calc(h - var(--lch-h-vadj)));    
+    --cyan-half: oklch(from var(--cyan) var(--lch-l-half) c h);
+    --cyan-pr: oklch(from var(--cyan) var(--lch-l-pr) calc(c * 2/3) h);
+    --cyan-d: oklch(from var(--cyan) var(--lch-l-d) calc(c * 1/2) h);
 
-    --green-l: oklch(from var(--green) calc(100% * (8/9)) calc(c / 5) h);
-    --green-g: oklch(from var(--green) calc(100% * (5/6)) calc(c / 3) h);
-    --green-v: oklch(from var(--green) calc(100% * (5/6)) c calc(h - var(--lch-h-vadj)));    
-    --green-half: oklch(from var(--green) 50% c h);
-    --green-pr: oklch(from var(--green) calc(100% * (1/3)) calc(c * 2/3) h);
-    --green-d: oklch(from var(--green) calc(100% * (1/6)) calc(c * 1/2) h);
+    --green-l: oklch(from var(--green) var(--lch-l-l) calc(c / 5) h);
+    --green-g: oklch(from var(--green) var(--lch-l-g) calc(c / 3) h);
+    --green-v: oklch(from var(--green) var(--lch-l-g) c calc(h - var(--lch-h-vadj)));    
+    --green-half: oklch(from var(--green) var(--lch-l-half) c h);
+    --green-pr: oklch(from var(--green) var(--lch-l-pr) calc(c * 2/3) h);
+    --green-d: oklch(from var(--green) var(--lch-l-d) calc(c * 1/2) h);
 
-    --orange-l: oklch(from var(--orange) calc(100% * (8/9)) calc(c / 5) h);
-    --orange-g: oklch(from var(--orange) calc(100% * (5/6)) calc(c / 3) h);
-    --orange-v: oklch(from var(--orange) calc(100% * (5/6)) c calc(h - var(--lch-h-vadj)));    
-    --orange-half: oklch(from var(--orange) 50% c h);
-    --orange-pr: oklch(from var(--orange) calc(100% * (1/3)) calc(c * 2/3) h);
-    --orange-d: oklch(from var(--orange) calc(100% * (1/6)) calc(c * 1/2) h);
+    --orange-l: oklch(from var(--orange) var(--lch-l-l) calc(c / 5) h);
+    --orange-g: oklch(from var(--orange) var(--lch-l-g) calc(c / 3) h);
+    --orange-v: oklch(from var(--orange) var(--lch-l-g) c calc(h - var(--lch-h-vadj)));    
+    --orange-half: oklch(from var(--orange) var(--lch-l-half) c h);
+    --orange-pr: oklch(from var(--orange) var(--lch-l-pr) calc(c * 2/3) h);
+    --orange-d: oklch(from var(--orange) var(--lch-l-d) calc(c * 1/2) h);
 
-    --red-l: oklch(from var(--red) calc(100% * (8/9)) calc(c / 5) h);
-    --red-g: oklch(from var(--red) calc(100% * (5/6)) calc(c / 3) h);
-    --red-v: oklch(from var(--red) calc(100% * (5/6)) c calc(h - var(--lch-h-vadj)));    
-    --red-half: oklch(from var(--red) 50% c h);
-    --red-pr: oklch(from var(--red) calc(100% * (1/3)) calc(c * 2/3) h);
-    --red-d: oklch(from var(--red) calc(100% * (1/6)) calc(c * 1/2) h);
+    --red-l: oklch(from var(--red) var(--lch-l-l) calc(c / 5) h);
+    --red-g: oklch(from var(--red) var(--lch-l-g) calc(c / 3) h);
+    --red-v: oklch(from var(--red) var(--lch-l-g) c calc(h - var(--lch-h-vadj)));    
+    --red-half: oklch(from var(--red) var(--lch-l-half) c h);
+    --red-pr: oklch(from var(--red) var(--lch-l-pr) calc(c * 2/3) h);
+    --red-d: oklch(from var(--red) var(--lch-l-d) calc(c * 1/2) h);
 
-    --violet-l: oklch(from var(--violet) calc(100% * (8/9)) calc(c / 5) h);
-    --violet-g: oklch(from var(--violet) calc(100% * (5/6)) calc(c / 3) h);
-    --violet-v: oklch(from var(--violet) calc(100% * (5/6)) c calc(h - var(--lch-h-vadj)));    
-    --violet-half: oklch(from var(--violet) 50% c h);
-    --violet-pr: oklch(from var(--violet) calc(100% * (1/3)) calc(c * 2/3) h);
-    --violet-d: oklch(from var(--violet) calc(100% * (1/6)) calc(c * 1/2) h);
+    --violet-l: oklch(from var(--violet) var(--lch-l-l) calc(c / 5) h);
+    --violet-g: oklch(from var(--violet) var(--lch-l-g) calc(c / 3) h);
+    --violet-v: oklch(from var(--violet) var(--lch-l-g) c calc(h - var(--lch-h-vadj)));    
+    --violet-half: oklch(from var(--violet) var(--lch-l-half) c h);
+    --violet-pr: oklch(from var(--violet) var(--lch-l-pr) calc(c * 2/3) h);
+    --violet-d: oklch(from var(--violet) var(--lch-l-d) calc(c * 1/2) h);
 
-    --grey-l: oklch(from var(--grey) calc(100% * (8/9)) calc(c / 5) h);
-    --grey-g: oklch(from var(--grey) calc(100% * (5/6)) calc(c / 3) h);
-    --grey-v: oklch(from var(--grey) calc(100% * (5/6)) c calc(h - var(--lch-h-vadj)));    
-    --grey-half: oklch(from var(--grey) 50% c h);
-    --grey-pr: oklch(from var(--grey) calc(100% * (1/3)) calc(c * 2/3) h);
-    --grey-d: oklch(from var(--grey) calc(100% * (1/6)) calc(c * 1/2) h);
+    --grey-l: oklch(from var(--grey) var(--lch-l-l) calc(c / 5) h);
+    --grey-g: oklch(from var(--grey) var(--lch-l-g) calc(c / 3) h);
+    --grey-v: oklch(from var(--grey) var(--lch-l-g) c calc(h - var(--lch-h-vadj)));    
+    --grey-half: oklch(from var(--grey) var(--lch-l-half) c h);
+    --grey-pr: oklch(from var(--grey) var(--lch-l-pr) calc(c * 2/3) h);
+    --grey-d: oklch(from var(--grey) var(--lch-l-d) calc(c * 1/2) h);
 
     --offwhite: var(--grey-l);
     --offblack: var(--grey-d);
