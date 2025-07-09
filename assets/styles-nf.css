@@ -30,7 +30,7 @@
     --lch-l-d: 0.1667; /*calc(100% * (1/6))*/
 
     --lch-c: 0.25;
-    --lch-h-vadj: 15;
+    --lch-h-vadj: 10; /*15*/
     
     --blue: oklch(var(--lch-l) var(--lch-c) 252);
     --cyan: oklch(from var(--blue) var(--lch-l) var(--lch-c) calc(h - 60));
