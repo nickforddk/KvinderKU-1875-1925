@@ -21,9 +21,9 @@
 <ul>
 <li>Black, Clara, Estrid Hein, Lis Jacobsen og Marie Krogh (1925). <em>Kvindelige Akademikere 1875-1925</em>. København: Gyldendal.</li>
 </ul>
-<p>Yderligere oplysninger om fødselsstederne blev hentet fra historiske fortegnelser over indskrevne studenter, samt andre biografiske værker.</p>
+<p>Yderligere oplysninger om fødestederne blev hentet fra historiske fortegnelser over indskrevne studenter, samt andre biografiske værker.</p>
 <h2>Værktøjer</h2>
-<p>Denne side og det bagvedliggende datasæt er blevet kodet i <em>R</em>. Dataekstraktion fra biografierne blev gennemført med hjælp af bl.a. Metas Llama 3 sprogmodel via <a target="_top" href="https://ollama.com/">Ollama</a>. Fødselsstedernes koordinater blev skaffet gennem <a target="_top" href="https://jessecambon.github.io/tidygeocoder/">tidygeocoder</a>. Kortet blev genereret ved hjælp af <a target="_top" href="https://rstudio.github.io/leaflet/">Leaflet</a>. Siden er hostet på <a target="_top" href="https://github.com/">GitHub</a>.</p>
+<p>Denne side og det bagvedliggende datasæt er blevet kodet i <em>R</em>. Dataekstraktion fra biografierne blev gennemført ved hjælp af bl.a. Metas Llama 3 sprogmodel via <a target="_top" href="https://ollama.com/">Ollama</a>. Fødestedernes koordinater blev skaffet gennem <a target="_top" href="https://jessecambon.github.io/tidygeocoder/">tidygeocoder</a>. Kortet blev genereret ved hjælp af <a target="_top" href="https://rstudio.github.io/leaflet/">Leaflet</a>. Siden er hostet på <a target="_top" href="https://github.com/">GitHub</a>.</p>
 <h2>Hvem står bag?</h2>
 <p>Denne interaktive udstilling er blevet lavet af <a target="_top" href="https://www.nickford.dk">Nick Ford</a>, som en del af et forskningsprojekt, <a target="_top" href="https://hcnordics.github.io">Mapping the Human Capital of the Nordic Countries</a>.</p>
 <p><a target="_top" href="https://www.sdu.dk/da/hedg">HEDG</a> <a target="_top" href="https://saxo.ku.dk/">Saxo</a></p>
@@ -71119,28 +71119,5 @@
     </section>
   </section>
 </body>
-<script>
-  function applyLanguageFilter(lang) {
-      document.documentElement.setAttribute('lang', lang);
-  }
-
-  window.addEventListener('message', (event) => {
-    if (event.data && event.data.lang) {
-      applyLanguageFilter(event.data.lang);
-    }
-  });
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const lang = localStorage.getItem('selectedLang') || 'da';
-    applyLanguageFilter(lang);
-  });
-
-  window.addEventListener('message', (event) => {
-    // Optionally validate event.origin if cross-origin
-    const layout = event.data.layout;
-    if (layout === 'side' || layout === 'bottom') {
-      document.body.setAttribute('data-layout', layout);
-    }
-  });
-</script>
+<script src="lib/iframeUpdate.js"></script>
 </html>
